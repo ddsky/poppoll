@@ -1,19 +1,19 @@
 {
     "name": "poppoll",
-    "title":       "poppoll - quick site polls",
+    "title": "poppoll - quick site polls",
     "description": "A quick and efficient way to put mini polls on your site.",
     "keywords": [
         "poll",
         "survey"
     ],
-    "version": "0.8.0",
+    "version": "0.8.1",
     "author": {
         "name": "David Urbansky",
         "url": "https://github.com/ddsky/poppoll"
     },
     "maintainers": [
         {
-          "name": "David Urbansky"           
+            "name": "David Urbansky"
         }
     ],
     "licenses": [

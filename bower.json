@@ -1,6 +1,6 @@
 {
   "name": "poppoll",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "main": [
     "js/poppoll.min.js",
     "css/poppoll.min.css"
@@ -25,14 +25,14 @@
   "authors": [
     "David Urbansky <davidurbansky@gmail.com>"
   ],
-  "description": "A jQuery search suggest plugin.",
+  "description": "A jQuery popup poll plugin.",
   "keywords": [
     "jQuery",
     "popup",
     "popover",
     "survey",
     "poll",
-    "javascript",
+    "javascript"
   ],
   "license": "MIT"
 }
