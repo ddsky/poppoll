@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Poppoll Example Page</title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/poppoll.min.css" type="text/css" charset="utf-8">
+</head>
 <body>
 
 <!-- The popup design. -->
-<div id="myPopupPoll" style="padding:20px;position:fixed;width:400px;height:200px;top:200px;margin-left:40%;display:none;border:1px solid blue;background-color:#ddd">
+<div id="poppoll">
+    <div>
+        <div id="screen1">
+            <h2>Which option do you like better?</h2>
 
-    <form>
+            <form>
+                <input type="radio" name="decision" value="1"> This one, clearly<br>
+                <input type="radio" name="decision" value="2"> The second one, hands down<br>
+                <input type="radio" name="decision" value="3"> The third door please<br>
+            </form>
+        </div>
+        <div id="screen2">
+            <h2>Thank you, you're awesome!</h2>
 
-        <option>
-            <input type="radio" value="1"> 1
-        </option>
-        <option>
-            <input type="radio" value="2"> 2
-        </option>
+            <p>Would you like to be informed about more later?</p>
 
-    </form>
+            <form action="" method="post">
+                <input type="email" value="" name="EMAIL" class="email" placeholder="email address" required="">
 
+                <div class="clear"><input type="submit" value="notify me" name="subscribe"
+                                          onclick="settings.hideCallback()"></div>
+            </form>
+            <div class="clear"><input type="submit" value="close" name="close" onclick="settings.hideCallback()"></div>
+        </div>
+    </div>
 </div>
 
 <!-- The page's content. -->
-<div style="width:60%;max-width:600px;margin-left: auto;margin-right:auto;">
+<div id="content">
 
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
@@ -83,22 +101,67 @@
 <!-- Configure poppoll. -->
 <script type="text/javascript">
     var settings = {
+        // a _globally_ unique id of the poll, best practice use the domain name and a number
+        pollId: "domain_1",
+
+        // several conditions that need to be fulfilled before the poppoll is shown
         showConditions: {
-            time: 5000,
-            scrolledDown: true,
-            likelihood: 0.5,
-            conditionCheck: function() {
+            // time in milliseconds that the user has to be on the site
+            time: 1000,
+
+            // whether the user must have scrolled down to the end of the page
+            scrolledDown: false,
+
+            // the likelihood that the user is shown for the poll, 1.0 = 100% meaning if the other conditions are met he will see the poppoll
+            likelihood: 1.0,
+
+            // additional conditions that must be met
+            conditionCheck: function () {
                 return true;
             }
         },
-        shuffleOptions: true
+
+        // optional: you can override the show functionality, here we use a fadeIn
+        showCallback: function () {
+            console.log("show");
+            $('#poppoll').css('opacity', 0);
+            $('#poppoll').css('display', 'block');
+            $('#poppoll').removeClass('animated');
+            $('#poppoll').removeClass('fadeIn');
+            $('#poppoll').removeClass('fadeOut');
+            $('#poppoll').addClass('animated fadeIn');
+        },
+
+        // optional: you can override the hide functionality, here we use a fadeOut
+        hideCallback: function () {
+            console.log("hide");
+            $('#poppoll').removeClass('animated');
+            $('#poppoll').removeClass('fadeIn');
+            $('#poppoll').css('opacity', 1);
+            $('#poppoll').addClass('animated fadeOut');
+        }
     }
-    $('#myPopupPoll').poppoll(settings);
+
+    $('#poppoll').poppoll(settings)
+</script>
+
+<!-- Example page configurations -->
+<script type="text/javascript">
+    function decisionMade(ev) {
+        //console.log('done ' + ev.target.getAttribute('value'));
+
+        $('#screen1').animate({
+            opacity: 0.0,
+            bottom: "+=100%",
+            height: "0"
+        }, 300, function () {
+            $(this).remove();
+        });
+    }
+
+    $('#poppoll form span').click(decisionMade);
+    $('#poppoll form input').click(decisionMade);
 </script>
 
 </body>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
 </html>

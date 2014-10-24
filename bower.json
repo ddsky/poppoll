@@ -1,0 +1,38 @@
+{
+  "name": "poppoll",
+  "version": "0.8.0",
+  "main": [
+    "js/poppoll.min.js",
+    "css/poppoll.min.css"
+  ],
+  "ignore": [
+    "**/.*",
+    ".git",
+    "img",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "homepage": "https://github.com/ddsky/poppoll",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ddsky/poppoll.git"
+  },
+  "authors": [
+    "David Urbansky <davidurbansky@gmail.com>"
+  ],
+  "description": "A jQuery search suggest plugin.",
+  "keywords": [
+    "jQuery",
+    "popup",
+    "popover",
+    "survey",
+    "poll",
+    "javascript",
+  ],
+  "license": "MIT"
+}

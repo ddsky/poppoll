@@ -1,0 +1,39 @@
+body {
+    font-family: verdana;
+    font-size: 12px;
+}
+
+#content {
+    width: 60%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#poppoll {
+    position: fixed;
+    left: 1%;
+    right: 1%;
+    top: 20%;
+    display: none;
+}
+
+#poppoll > div {
+    display: block;
+    padding: 20px;
+    height: 250px;
+    width: 500px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0px 2px 20px #6C6C6C;
+}
+
+#poppoll form input {
+    margin-bottom: 5px;
+}
+
+#screen1, #screen2 {
+    position: relative;
+    height: 100%;
+}

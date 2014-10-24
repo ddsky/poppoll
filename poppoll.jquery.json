@@ -1,0 +1,32 @@
+{
+    "name": "poppoll",
+    "title":       "poppoll - quick site polls",
+    "description": "A quick and efficient way to put mini polls on your site.",
+    "keywords": [
+        "poll",
+        "survey"
+    ],
+    "version": "0.8.0",
+    "author": {
+        "name": "David Urbansky",
+        "url": "https://github.com/ddsky/poppoll"
+    },
+    "maintainers": [
+        {
+          "name": "David Urbansky"           
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/ddsky/poppoll/issues",
+    "homepage": "https://github.com/ddsky/poppoll",
+    "docs": "https://github.com/ddsky/poppoll",
+    "download": "https://github.com/ddsky/poppoll",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
