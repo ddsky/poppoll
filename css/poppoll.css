@@ -16,6 +16,7 @@ body {
     right: 1%;
     top: 20%;
     display: none;
+    z-index: 999;
 }
 
 #poppoll > div {

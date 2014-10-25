@@ -24,7 +24,6 @@
 
 }(jQuery));
 
-
 var PopPoll = function () {
 
     // the poppoll node
@@ -100,8 +99,6 @@ var PopPoll = function () {
      * Check whether the current user has seen the poll already (using cookies).
      */
     function hasSeenPoll() {
-        // FIXME
-        return false;
         var cookie = getCookie('poppoll_'+pollId);
         if (cookie == '') {
             return false;
@@ -109,10 +106,9 @@ var PopPoll = function () {
         return true;
     }
 
-
     /**
      * Return an object, through closure all methods keep bound to returned object.
-      */
+     */
     return {
         init: function (node, options) {
             popPollNode = node;
@@ -172,7 +168,6 @@ var PopPoll = function () {
                     }
                 });
             }
-
         }
     }
 }();
